@@ -25,3 +25,13 @@ function displayTimer() {
 
   timer.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
 }
+
+document.getElementById("pause-timer").addEventListener("click", () => {
+  clearInterval(int);
+});
+
+document.getElementById("reset-timer").addEventListener("click", () => {
+  clearInterval(int);
+  [milliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+  timer.innerHTML = "00 : 00 : 00 : 000";
+});
